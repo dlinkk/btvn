@@ -1,3 +1,3 @@
 # btvn
-nop btvn 
+nop btvn &
 dep trai 
