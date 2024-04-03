@@ -1,0 +1,32 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    int n, q, k;
+    cin >> n >> q; // n : so day so ; q: so truy van 
+    
+    
+    vector<vector<int>> arr(n);// khai bao vector chua n vector con (cac day so)
+
+    for (int i = 0; i < n; ++i) {
+        cin >> k; //kich thuoc cua mang i (day so thu i)
+        arr[i].resize(k); // thay doi kich thuoc mang sao cho bang so k phan tu 
+        for (int j = 0; j < k; ++j) {
+            cin >> arr[i][j]; // nhap gia tri cho tung phan tu cua mang con 
+        }
+    }
+
+    for (int i = 0; i < q; ++i) {
+        int arrayIndex, elementIndex;
+        cin >> arrayIndex >> elementIndex; 
+        cout << arr[arrayIndex][elementIndex] << endl; 
+    }
+
+    return 0;
+}
