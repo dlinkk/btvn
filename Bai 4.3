@@ -12,31 +12,35 @@ string rtrim(const string &);
  * The function accepts STRING s as parameter.
  */
 
+bool isPalindrome(string s, int left, int right) {
+    while (left < right) {
+        if (s[left++] != s[right--]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
 int palindromeIndex(string s) {
     int left = 0;
     int right = s.length() - 1;
+
     while (left < right) {
         if (s[left] != s[right]) {
-            int i = left + 1; //bo qua phan tu ben trai va xet cac phan tu con lai 
-            int j = right;
-            while (i < j && s[i] == s[j]) {
-                i++;
-                j--;
+            if (isPalindrome(s, left + 1, right)) {
+                return left;
             }
-            if (i >= j) return left;//i>=j khi xet het xau ma khong co phan tu nao ko tao thanh chuoi palindrome
-            i = left;
-            j = right - 1;//bo qua phan tu ben phai va xet cac phan tu con lai
-            while (i < j && s[i] == s[j]) {
-                i++;
-                j--;
+            if (isPalindrome(s, left, right - 1)) {
+                return right;
             }
-            if (i >= j) return right;
-            return -1;
+            return -1; 
         }
         left++;
         right--;
     }
-  return -1;
+
+    return -1; 
 }
 
 
