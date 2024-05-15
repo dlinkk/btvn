@@ -1,0 +1,40 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    int Q ;
+    cin >> Q ; 
+    set<int> A ; 
+    while (Q--){
+        int y , x ;
+        cin >> y >> x ; 
+    
+    switch (y){
+        case 1 :
+        A.insert(x);
+        break;
+        case 2 :
+        A.erase(x);
+        break;
+        case 3:
+        if(A.find(x)!=A.end()){//neu x khong xuat hien trong set thi A.find(x)==A.end()
+            cout <<"Yes"<<endl;
+        }
+        else{
+            cout<<"No"<<endl;
+        }
+        break;
+    }
+    }
+    return 0;
+}
+
+
+
