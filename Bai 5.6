@@ -1,0 +1,47 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int Q ;
+    cin >> Q ; 
+    std::map<string , int> m ;
+    while(Q--){
+       int type ; 
+       cin >> type ; 
+       
+       string name ; 
+       cin >> name ; 
+       
+       switch (type) {
+        case 1 : {
+           int mark ; 
+           cin >> mark ;
+           
+           int oldmark = m[name];
+           oldmark += mark ; 
+           m[name] = oldmark;
+           break;
+        }
+         case 2 : 
+           m[name] = 0 ;
+           break; 
+    
+         case 3 :
+           cout << m[name]<<endl;
+           break;
+       
+       }
+    }
+    return 0;
+}
+
+
+
